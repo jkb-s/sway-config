@@ -1,0 +1,58 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 24,
+    "modules-left": ["sway/workspaces"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["tray", "pulseaudio", "network", "temperature", "cpu", "memory", "battery", "clock", "custom/japan"],
+    "sway/workspaces": {
+        "disable-scroll": false,
+        "disable-click": false,
+    },
+    "tray": {
+        "spacing": 1,
+    },
+    "clock": {
+        "format": "{:%m/%d %H:%M:%S}",
+        "interval" : 1,
+    },
+    "cpu": {
+        "format": " {usage}%",
+        "states": {
+	    "warning": 50,
+            "critical": 90
+	}
+    },
+    "memory": {
+        "format": " {}%"
+    },
+    "temperature": {
+        "critical-threshold": 75,
+        "format": " {temperatureC}°C"
+    },
+    "battery": {
+        "bat": "BAT1",
+        "full-at": 95,
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "network": {
+        "format-wifi": " {essid}",
+        "format-disconnected": "⚠ Disconnected",
+        "format-ethernet": "  {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "headphones": "",
+            "default": ["", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+}
